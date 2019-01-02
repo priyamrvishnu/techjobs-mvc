@@ -11,17 +11,19 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #3 - Use the same list display from search.html -->
-    <form >
-        <h2 title="${title}">Default Title</h2>
-        <table>
-            <tr th:each="searchByColumns : ${searchByColumn}" th:value="${searchByColumns.id}" >
-            <tr th:each="mapEntry : ${searchByColumns}">
+
+    <div th:fragment="results">
+        <div th:if="${jobs}">
+            <p th:text="${jobs.size()}+' '+'Results(s)'"></p>
+        </div>
+        <table class="job-listing" th:each="job :${jobs}">
+            <tr th:each="mapEntry : ${job}">
                 <td th:text="${mapEntry.key}"></td>
                 <td th:text="${mapEntry.value}"></td>
             </tr>
-            </tr>
         </table>
-    </form>
+    </div>
+
 </div>
 
 </body>
