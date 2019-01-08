@@ -38,7 +38,6 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
-        <h2 title="${title}">Default Title</h2>
         <div th:fragment="results">
             <div th:if="${jobs}">
                 <p th:text="${jobs.size()}+' '+'Results(s)'"></p>
@@ -50,8 +49,6 @@
                 </tr>
         </table>
         </div>
-
-
 </div>
 
 </body>
